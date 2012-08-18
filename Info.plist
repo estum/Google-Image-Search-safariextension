@@ -56,7 +56,9 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://github.com/downloads/tonissimo/Google-Image-Search-safariextension/updates.plist</string>
 	<key>Website</key>
-	<string>https://github.com/downloads/tonissimo/Google-Image-Search-safariextension/Google%20Search%20by%20Image.safariextz</string>
+	<string>http://tonissimo.github.com/Google-Image-Search-safariextension/</string>
 </dict>
 </plist>
