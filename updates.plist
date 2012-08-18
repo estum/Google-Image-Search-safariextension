@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>Google Search by Image Safari Extention Updates</key>
+   <array>
+     <dict>
+       <key>CFBundleIdentifier</key>
+       <string>com.tonissimo.googleimagesearch</string>
+       <key>Developer Identifier</key>
+       <string>YRH3V2FPUB</string>
+       <key>CFBundleVersion</key>
+       <string>1.0</string>
+       <key>CFBundleShortVersionString</key>
+       <string>1.0</string>
+       <key>URL</key>
+       <string>https://github.com/downloads/tonissimo/Google-Image-Search-safariextension/Google%20Search%20by%20Image.safariextz</string>
+     </dict>
+   </array>
+</dict>
