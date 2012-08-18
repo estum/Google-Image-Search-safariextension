@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Search Image in Google</title>
+  <script src="port.js"></script>
+  <script type="text/javascript">
+    var imageGoogleSearchURL = 'http://www.google.com/searchbyimage?sbisrc=cr_1_0_0&image_url=';
+    var allowSearchByBackgroundImage = safari.extension.settings.search_by_background_image;
+    
+    function translate(messageID, args) {
+      return chrome.i18n.getMessage(messageID, args);
+    }
+    
+    function getLocalizedString (key)
+    {
+      try {
+        var ret = localizedStrings[key];
+        if (ret === undefined)
+          ret = key;
+        return ret;
+      } catch (ex) {}
+ 
+      return key;
+    }
+    
+    function settingsChanged(event) {
+      if (event.key == "search_by_background_image") {
+        allowSearchByBackgroundImage = event.newValue;
+      }
+    }
+    
+    safari.extension.settings.addEventListener("change", settingsChanged, false);
+    
+    function respondSettings(theMessageEvent) {
+      if(theMessageEvent.name === "requestSettings") {
+        theMessageEvent.target.page.dispatchMessage("settings", allowSearchByBackgroundImage);
+      }
+    }
+    
+    safari.application.addEventListener("message", respondSettings, false);
+  
+    function commandSearchImage(event) {
+      if (event.command === 'search_image' && 
+          event.userInfo.ifImage && 
+          event.userInfo.imageSrc.length > 0) {
+        var url = imageGoogleSearchURL + encodeURIComponent(event.userInfo.imageSrc);
+        var newTab = safari.application.activeBrowserWindow.openTab().url = url;
+      }
+    }
+    
+    function validateSearchImage(event) {
+      event.target.title = translate("search_google_image");
+      if (!event.userInfo.ifImage) {
+        event.target.disabled = true;
+      }
+    }
+  
+    safari.application.addEventListener("command", commandSearchImage, false);
+    safari.application.addEventListener("validate", validateSearchImage, false);
+  </script>
+</head>
+<body>
+</body>
+</html>
