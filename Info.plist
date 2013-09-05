@@ -57,8 +57,8 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>https://github.com/downloads/tonissimo/Google-Image-Search-safariextension/updates.plist</string>
+	<string>https://github.com/downloads/estum/Google-Image-Search-safariextension/updates.plist</string>
 	<key>Website</key>
-	<string>http://tonissimo.github.com/Google-Image-Search-safariextension/</string>
+	<string>http://estum.github.com/Google-Image-Search-safariextension/</string>
 </dict>
 </plist>
